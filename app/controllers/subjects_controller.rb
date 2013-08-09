@@ -15,8 +15,13 @@ class SubjectsController < ApplicationController
 	def addSubject
 	  	@check = Attending.where(user_id: current_user.id, subject_id: params[:user][:subject_id] ).first
 	  	@attend = Attending.new
+	  	
 	  	@attend.user_id = current_user.id
 	  	@attend.subject_id = params[:user][:subject_id]
+		
+		@regUsers = current_user
+		puts "@regUsers : " + @regUsers.username
+
 	  	if @check
 	  		if @attend.user_id == @check.user_id && @attend.subject_id == @check.subject_id
 	  			flash[:notice] = "Subject Already present in your list"
@@ -26,7 +31,7 @@ class SubjectsController < ApplicationController
 	  	end
 	  	respond_to do |format|
 	  		format.html { redirect_to subject_path(@attend.subject_id) }
-	  		format.js 
+	  		format.js {@regUsers}
 	  	end
 	  	# redirect_to subject_path(@attend.subject_id)
   	end
