@@ -15,16 +15,16 @@
 //= require turbolinks
 //= require_tree .
 
-jQuery.fn.ajaxSetup({
-	'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javaScript")}
-})
+// jQuery.fn.ajaxSetup({
+// 	'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javaScript")}
+// })
 
-$(document).ready(function(){
-	$('#new_form').submit(function(){
-		$.post($(this).attr("action"), $(this).serialize(), null, "javascript");
-		return false;
-	})
-})
+// $(document).ready(function(){
+// 	$('#new_form').submit(function(){
+// 		$.post($(this).attr("action"), $(this).serialize(), null, "javascript");
+// 		return false;
+// 	})
+// })
 // $(document).ready(function() {
 //   return $("#new_form").on("ajax:success", function(e, data, status, xhr) {
 //     return $("#regUsers").append(xhr.responseText);
