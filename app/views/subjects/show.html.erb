@@ -1,0 +1,15 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+</table>
+<div id="regUsers">
+<%= render :partial => 'regUser', :collection => @regUsers %>
+</div>
+<%= form_for :user, :remote=> true, :url => addSubject_path(@subject.id), :html => {:id => "new_form"} do |f| %>
+  <%= f.hidden_field :subject_id, :value => @subject.id %>
+  <p><%= f.submit "Join"%></p>
+<% end %>

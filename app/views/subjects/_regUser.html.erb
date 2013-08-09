@@ -1,0 +1,10 @@
+<table>
+  <tbody>
+    <% @regUsers.each do |regUser| %>
+      <tr>
+        <td><%= regUser.id %></td>
+        <td><%= link_to regUser.username, userIndex_path(regUser.id) %></td>
+    <% end %>
+      </tr>
+  </tbody>
+</table>
