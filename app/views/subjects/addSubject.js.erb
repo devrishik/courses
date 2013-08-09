@@ -1,1 +1,2 @@
-alert("WORKS!!!");
+$("#regUsers").append(" <%= escape_javascript(render ( :partial => 'regUser' :collection => current_user ) %> ");
+$("#new_form")[0].reset();
